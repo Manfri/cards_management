@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: org.clojars.mihaelkonjevic/konserve-pg:0.1.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/clojars/mihaelkonjevic/konserve-pg/0.1.2/konserve-pg-0.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
