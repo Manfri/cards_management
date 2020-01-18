@@ -5,3 +5,4 @@
 ;; use the optional parameter to control the schema flexibility
 (d/create-database uri :schema-on-read true)
 (def conn (d/connect uri))
+(def hello-world-func (fn [] (println "Hello world")))
