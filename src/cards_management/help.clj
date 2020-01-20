@@ -5,6 +5,9 @@
 ;; use the optional parameter to control the schema flexibility
 (d/create-database uri :schema-on-read true)
 (def conn (d/connect uri))
+
+
+
 (defn make-new-pro
   "make new project"
   [?att-name va]
@@ -37,16 +40,22 @@
 
 (defn add-attribute
   [known-attribute known-value new-attribute new-value]
-  (def ent (d/q '[:find ?e
+  (let  [ ent (d/q '[:find ?e
                   :in $ [?attr-name ?value]
                   :where
                   [?e ?attr-name ?value]
-                  ] @conn [known-attribute known-value]))
-  (println (get {[ent]} 0))
-  ;;(d/transact conn [{:db/id ent
-                    ;; new-attribute new-value}])
+                  ] @conn [known-attribute known-value])]
+    (println ent)
+           ;(d/transact conn [{:db/id 25 new-attribute new-value}])
+           )
   )
-(add-attribute :project-name "ALC" :leader "Rahul")
+
+(add-attribute :project-name "ALC" :leader "rahul" )
+
+(d/q '[:find ?e ?v ?a
+       :where
+       [?e ?v ?a]]
+        @conn )
 
 
 (defn add-attribute2
