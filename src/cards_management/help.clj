@@ -22,7 +22,6 @@
                      :where
                      [?e ?attr-name ?value]
                      ] @conn [known-attribute known-value])]
-    (println ent)
     (d/transact conn [{:db/id ent new-attribute new-value}])
     )
   )
